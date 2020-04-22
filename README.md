@@ -1,8 +1,8 @@
 # ModernSegmentedProgressView
 
-[![Version](https://img.shields.io/cocoapods/v/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
-[![License](https://img.shields.io/cocoapods/l/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
-[![Platform](https://img.shields.io/cocoapods/p/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
+[![Version](https://img.shields.io/cocoapods/v/ModernSegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/ModernSegmentedProgressView)
+[![License](https://img.shields.io/cocoapods/l/ModernSegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/ModernSegmentedProgressView)
+[![Platform](https://img.shields.io/cocoapods/p/ModernSegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/ModernSegmentedProgressView)
 
 ## Example
 
