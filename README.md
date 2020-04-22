@@ -1,8 +1,8 @@
-# SegmentedProgressView
+# ModernSegmentedProgressView
 
-[![Version](https://img.shields.io/cocoapods/v/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
-[![License](https://img.shields.io/cocoapods/l/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
-[![Platform](https://img.shields.io/cocoapods/p/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
+[![Version](https://img.shields.io/cocoapods/v/ModernSegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/ModernSegmentedProgressView)
+[![License](https://img.shields.io/cocoapods/l/ModernSegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/ModernSegmentedProgressView)
+[![Platform](https://img.shields.io/cocoapods/p/ModernSegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/ModernSegmentedProgressView)
 
 ## Example
 
@@ -10,7 +10,7 @@
 
 ## Usage
 
-The class is exported as a subclass of `UIView`, and thus can be added to any view with `addSubview()`. The first initializer uses default colors of `.orange` and `.darkGray` for the filled segments and empty segments, respectively.
+The class is exported as a subclass of `UIView`, and thus can be added to any view with `addSubview()`. Note that the name of the exported class is `SegmentedProgressView`, which differs from the name of the library for simplicity. The first initializer uses default colors of `.orange` and `.darkGray` for the filled segments and empty segments, respectively.
 
 
 ```swift
@@ -49,11 +49,11 @@ class ViewController: UIViewController {
 
 ## Installation
 
-SegmentedProgressView is available through [CocoaPods](https://cocoapods.org). To install
+ModernSegmentedProgressView is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SegmentedProgressView'
+pod 'ModernSegmentedProgressView'
 ```
 
 ## Author
@@ -62,4 +62,4 @@ dylandpowers, dylandpowers@gmail.com
 
 ## License
 
-SegmentedProgressView is available under the MIT license. See the LICENSE file for more info.
+ModernSegmentedProgressView is available under the MIT license. See the LICENSE file for more info.
