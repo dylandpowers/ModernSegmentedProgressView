@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'SegmentedProgressView_Example' do
   pod 'SegmentedProgressView', :path => '../'
+  pod 'SnapKit', '~> 5.0'
 
   target 'SegmentedProgressView_Tests' do
     inherit! :search_paths

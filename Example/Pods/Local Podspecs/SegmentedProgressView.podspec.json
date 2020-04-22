@@ -1,0 +1,28 @@
+{
+  "name": "SegmentedProgressView",
+  "version": "0.1.0",
+  "summary": "A short description of SegmentedProgressView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/dylanpowers25/SegmentedProgressView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "dylanpowers25": "ddp19@duke.edu"
+  },
+  "source": {
+    "git": "https://github.com/dylanpowers25/SegmentedProgressView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "SegmentedProgressView/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "SnapKit": [
+      "~> 5.0"
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+import Foundation
+import UIKit
+
+/// Progress view with discrete segments.
+public class SegmentedProgressView: UIView {
+    private static let CORNER_RADIUS: CGFloat = 5
+    
+    private let numTotalSegments: UInt32
+    private let numFilledSegments: UInt32
+    private let width: CGFloat
+    private var filledSegments: [UIView]
+    private var unfilledSegments: [UIView]
+    
+    private var numUnfilledSegments: UInt32 {
+        get {
+            return numTotalSegments - numFilledSegments
+        }
+    }
+    
+    private var segmentWidth: CGFloat {
+        get {
+            let widthWithoutSeparators: Float = Float(width) - (Float(numTotalSegments - 1) * Float(separatorSize))
+            let individualWidth: Float = widthWithoutSeparators / Float(numTotalSegments)
+            return CGFloat(individualWidth)
+        }
+    }
+    
+    var fillColor: UIColor = .orange {
+        didSet {
+            colorSegments()
+        }
+    }
+    
+    var noFillColor: UIColor = .darkGray {
+        didSet {
+            colorSegments()
+        }
+    }
+    
+    var cellHeight: CGFloat = 11
+    var separatorSize: CGFloat = 3
+    
+    init(numTotalSegments: UInt32, numFilledSegments: UInt32, width: CGFloat) {
+        guard width > 0 else {
+            fatalError("Width must be greater than zero")
+        }
+        
+        self.numTotalSegments = numTotalSegments
+        self.numFilledSegments = numFilledSegments
+        self.width = width
+        self.filledSegments = Array()
+        self.unfilledSegments = Array()
+        
+        super.init(frame: .zero)
+        
+        for _ in 0..<self.numFilledSegments {
+            let filledSegment = UIView()
+            filledSegment.clipsToBounds = true
+            filledSegment.layer.cornerRadius = SegmentedProgressView.CORNER_RADIUS
+            addSubview(filledSegment)
+            filledSegments.append(filledSegment)
+        }
+        
+        for _ in 0..<self.numUnfilledSegments {
+            let unfilledSegment = UIView()
+            unfilledSegment.clipsToBounds = true
+            unfilledSegment.layer.cornerRadius = SegmentedProgressView.CORNER_RADIUS
+            addSubview(unfilledSegment)
+            unfilledSegments.append(unfilledSegment)
+        }
+        
+        colorSegments()
+        setupConstraints()
+    }
+    
+    convenience init(numTotalSegments: UInt32,
+                     numFilledSegments: UInt32,
+                     width: CGFloat,
+                     fillColor: UIColor,
+                     noFillColor: UIColor) {
+        self.init(numTotalSegments: numTotalSegments,
+                  numFilledSegments: numFilledSegments,
+                  width: width)
+        self.fillColor = fillColor
+        self.noFillColor = noFillColor
+    }
+    
+    private func setupConstraints() {
+        guard !self.filledSegments.isEmpty else {
+            setupConstraintsWithNoFilledSegments()
+            return
+        }
+        
+        let cellWidth: CGFloat = self.segmentWidth // so we only calculate once
+        let firstFilledSegment: UIView = self.filledSegments.first!
+        
+        firstFilledSegment.snp.makeConstraints { (make) -> Void in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview()
+            make.width.equalTo(cellWidth)
+            make.height.equalTo(self.cellHeight)
+        }
+        
+        layoutSegmentsInOrder(segments: self.filledSegments)
+        
+        guard !self.unfilledSegments.isEmpty else { return }
+        
+        let firstUnfilledSegment: UIView = self.unfilledSegments.first!
+        let lastFilledSegment: UIView = self.filledSegments.last!
+        
+        firstUnfilledSegment.snp.makeConstraints { (make) -> Void in
+            make.centerY.equalToSuperview()
+            make.left.equalTo(lastFilledSegment.snp.right).offset(self.separatorSize)
+            make.height.equalTo(self.cellHeight)
+            make.width.equalTo(cellWidth)
+        }
+        
+        layoutSegmentsInOrder(segments: self.unfilledSegments)
+    }
+    
+    private func setupConstraintsWithNoFilledSegments() {
+        guard !self.unfilledSegments.isEmpty else { return }
+        
+        let cellWidth: CGFloat = self.segmentWidth
+        let firstUnfilledSegment: UIView = self.unfilledSegments.first!
+        
+        firstUnfilledSegment.snp.makeConstraints { (make) -> Void in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview()
+            make.width.equalTo(cellWidth)
+            make.height.equalTo(self.cellHeight)
+        }
+        
+        layoutSegmentsInOrder(segments: unfilledSegments)
+    }
+    
+    private func layoutSegmentsInOrder(segments: [UIView]) {
+        let cellWidth: CGFloat = self.segmentWidth // so we only calculate it once
+        
+        for i in 1..<segments.count {
+            let currentSegment: UIView = segments[i]
+            let prevSegment: UIView = segments[i - 1]
+            
+            currentSegment.snp.makeConstraints { (make) -> Void in
+                make.centerY.equalToSuperview()
+                make.width.equalTo(cellWidth)
+                make.height.equalTo(self.cellHeight)
+                make.left.equalTo(prevSegment.snp.right).offset(self.separatorSize)
+            }
+        }
+    }
+    
+    private func colorSegments() {
+        filledSegments.forEach { $0.backgroundColor = self.fillColor }
+        unfilledSegments.forEach { $0.backgroundColor = self.noFillColor }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
