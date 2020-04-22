@@ -6,7 +6,7 @@
 
 ## Example
 
-![Example](./images/example.png)
+![Example](https://raw.githubusercontent.com/dylandpowers/ModernSegmentedProgressView/master/images/example.png)
 
 ## Usage
 
