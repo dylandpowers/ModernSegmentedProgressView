@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/dylandpowers/SegmentedProgressView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'dylanpowers25' => 'ddp19@duke.edu' }
+  s.author           = { 'dylandpowers' => 'dylandpowers@gmail.com' }
   s.source           = { :git => 'https://github.com/dylandpowers/SegmentedProgressView.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
@@ -33,7 +33,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'SegmentedProgressView/Classes/**/*'
   
-
-   s.frameworks = 'UIKit'
-   s.dependency 'SnapKit', '~> 5.0'
+  s.frameworks = 'UIKit'
+  s.dependency 'SnapKit', '~> 5.0'
 end

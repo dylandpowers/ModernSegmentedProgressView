@@ -1,15 +1,50 @@
 # SegmentedProgressView
 
-[![CI Status](https://img.shields.io/travis/dylanpowers25/SegmentedProgressView.svg?style=flat)](https://travis-ci.org/dylanpowers25/SegmentedProgressView)
 [![Version](https://img.shields.io/cocoapods/v/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
 [![License](https://img.shields.io/cocoapods/l/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
 [![Platform](https://img.shields.io/cocoapods/p/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![Example](./images/example.png)
+
+## Usage
+
+The class is exported as a subclass of `UIView`, and thus can be added to any view with `addSubview()`. The first initializer uses default colors of `.orange` and `.darkGray` for the filled segments and empty segments, respectively.
+
+
+```swift
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let segmentedProgressView = SegmentedProgressView(numTotalSegments: 10,
+                                                          numFilledSegments: 3,
+                                                          totalViewWidth: 300)
+        self.view.addSubview(segmentedProgressView)
+    }
+}
+```
+
+Alternatively, you can specify custom colors with the other initializer.
+
+```swift
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let segmentedProgressView = SegmentedProgressView(numTotalSegments: 10,
+                                                          numFilledSegments: 3,
+                                                          totalViewWidth: 300,
+                                                          fillColor: .yellow,
+                                                          noFillColor: .blue)
+        self.view.addSubview(segmentedProgressView)
+    }
+}
+```
 
 ## Requirements
+* iOS 10.0 or higher
 
 ## Installation
 
@@ -22,7 +57,7 @@ pod 'SegmentedProgressView'
 
 ## Author
 
-dylanpowers25, ddp19@duke.edu
+dylandpowers, dylandpowers@gmail.com
 
 ## License
 
