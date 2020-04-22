@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SegmentedProgressView'
+  s.name             = 'ModernSegmentedProgressView'
   s.version          = '0.1.0'
   s.summary          = 'A progress view with discrete segments.'
 
@@ -21,13 +21,15 @@ Pod::Spec.new do |s|
   This progress view is geared toward situations where you need to display integer progress to a user. For example, how many punches do I have until I get a free sandwich? The Segmented Progress View displays the current progress and the goal progress. Additionally, developers can configure colors for both empty and full cells.
                        DESC
 
-  s.homepage         = 'https://github.com/dylandpowers/SegmentedProgressView'
+  s.homepage         = 'https://github.com/dylandpowers/ModernSegmentedProgressView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'dylandpowers' => 'dylandpowers@gmail.com' }
-  s.source           = { :git => 'https://github.com/dylandpowers/SegmentedProgressView.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/dylandpowers/ModernSegmentedProgressView.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
+  
+  s.swift_version = '4.0'
   
   s.platform = :ios, '10.0'
 

@@ -6,7 +6,7 @@
 
 ## Example
 
-![Example](./images/smaller.png)
+![Example](https://imgur.com/a/xX1pH80)
 
 ## Usage
 
@@ -45,6 +45,7 @@ class ViewController: UIViewController {
 
 ## Requirements
 * iOS 10.0 or higher
+* Swift 4.0 or higher
 
 ## Installation
 
