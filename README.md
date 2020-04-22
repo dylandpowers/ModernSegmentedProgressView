@@ -6,7 +6,7 @@
 
 ## Example
 
-![Example](./images/example.png)
+![Example](./images/smaller.png)
 
 ## Usage
 
