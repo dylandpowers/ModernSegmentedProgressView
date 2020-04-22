@@ -6,7 +6,7 @@
 
 ## Example
 
-<img src="./images/example.png" width="50%" height="50%">
+![Example](./images/example.png)
 
 ## Usage
 
