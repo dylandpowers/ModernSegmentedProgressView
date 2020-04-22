@@ -1,4 +1,4 @@
-# SegmentedProgressView
+# ModernSegmentedProgressView
 
 [![Version](https://img.shields.io/cocoapods/v/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
 [![License](https://img.shields.io/cocoapods/l/SegmentedProgressView.svg?style=flat)](https://cocoapods.org/pods/SegmentedProgressView)
@@ -10,7 +10,7 @@
 
 ## Usage
 
-The class is exported as a subclass of `UIView`, and thus can be added to any view with `addSubview()`. The first initializer uses default colors of `.orange` and `.darkGray` for the filled segments and empty segments, respectively.
+The class is exported as a subclass of `UIView`, and thus can be added to any view with `addSubview()`. Note that the name of the exported class is `SegmentedProgressView`, which differs from the name of the library for simplicity. The first initializer uses default colors of `.orange` and `.darkGray` for the filled segments and empty segments, respectively.
 
 
 ```swift
