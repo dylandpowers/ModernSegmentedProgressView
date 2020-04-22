@@ -6,7 +6,7 @@
 
 ## Example
 
-![Example](https://imgur.com/a/xX1pH80)
+![Example](./images/example.png)
 
 ## Usage
 
