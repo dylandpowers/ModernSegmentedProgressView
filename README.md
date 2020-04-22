@@ -49,11 +49,11 @@ class ViewController: UIViewController {
 
 ## Installation
 
-SegmentedProgressView is available through [CocoaPods](https://cocoapods.org). To install
+ModernSegmentedProgressView is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SegmentedProgressView'
+pod 'ModernSegmentedProgressView'
 ```
 
 ## Author
@@ -62,4 +62,4 @@ dylandpowers, dylandpowers@gmail.com
 
 ## License
 
-SegmentedProgressView is available under the MIT license. See the LICENSE file for more info.
+ModernSegmentedProgressView is available under the MIT license. See the LICENSE file for more info.
